@@ -1,4 +1,4 @@
-# FolderQest
+# FolderQuest
 
 Телеграм бот для интерактивной текстовой игры "Folder".
 

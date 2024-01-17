@@ -3,10 +3,10 @@ import iop
 import hulls
 
 clean_markup = telebot.types.ReplyKeyboardRemove()
-tout=iop.SaveOutputs
+io=iop.IOP
 
-bot = telebot.TeleBot(tout.bot_api)
+bot = telebot.TeleBot(io.bot_api)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-  
+  bot.send_message(message.chat.id, io.text[message]['start'], reply_markup=clean_markup)
