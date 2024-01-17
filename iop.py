@@ -1,5 +1,4 @@
 import json
-
 from dotenv import load_dotenv
 from os import getenv
 
@@ -10,7 +9,7 @@ class IOP:
   quest: dict
   files: dict
   user: dict
-  bot_api = getenv('BOT_TOKEN')
+  bot_api = str(getenv('BOT_TOKEN'))
   text: dict
 
   def load_media(self, path: str):
