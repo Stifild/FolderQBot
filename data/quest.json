@@ -25,9 +25,36 @@
       }
     },
     "secret": {
-      
+      "description": " ",
+      "buttons": {
+        "1": "docs"
+      }
+    },
+    "meta":{
+      "description": " ",
+      "buttons": {
+        "1": "docs"
+      }
+    },
+    "notes": {
+      "description": " ",
+      "buttons": {
+        "1": "docs"
+      }
+    },
+    "photos": {
+      "description": " ",
+      "buttons": {
+        "1": "docs"
+      }
     }
     
+  },
+  "patch notes":{
+    "description": " ",
+    "buttons": {
+      "1": "docs"
+    }
   },
   "scan": {
     "scan service": {
@@ -38,10 +65,14 @@
       }
     },
     "FS": {
-      "1": ""
+      "description": " ",
+      "buttons": {
+        "1": "scan service"
     },
     "Hack": {
-      "1": ""
+      "description": " ",
+      "buttons": {
+        "1": "scan service"
   }
   
 }
