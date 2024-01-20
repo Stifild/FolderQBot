@@ -1,52 +1,84 @@
 {
   "start": {
     "description": "Приветъ это квестъ и тебе надо найти выходъ.",
-    "buttons":["Начать"]
-  
+    "buttons": [
+      "folder"
+    ]
+  },
   "folder": {
     "description": "Папка.",
-    "buttons": ["docs","pet.py","patch notes","scan service"]
+    "buttons": [
+      "docs",
+      "pet.py",
+      "patch notes",
+      "scan service"
+    ]
   },
   "pet.py": {
     "description": "Пэтъ проэктъ пользователя.",
-    "buttons": ["Folder"]
+    "buttons": [
+      "folder"
+    ]
   },
   "docs": {
     "description": "Пользовательские документы.",
-    "buttons": ["Photos","secret","meta","Notes"]
-   },
- "secret": {
-    "description": "Ведите ключъ]:",
-    "buttons": ["docs"]
+    "buttons": [
+      "photos",
+      "secret",
+      "meta",
+      "notes",
+      "folder"
+    ]
   },
-  "meta":{
+  "secret": {
+    "description": "Ведите ключъ:",
+    "buttons": [
+      "docs"
+    ]
+  },
+  "meta": {
     "description": "403",
-    "buttons": ["docs"]
- },
+    "buttons": [
+      "docs"
+    ]
+  },
   "notes": {
-    "description": "Записки пользователя.",
-    "buttons": ["docs", "еще записка"]
-   },
+    "description": "Записки пользователя. 10 штукъ.",
+    "buttons": [
+      "docs",
+      "записка"
+    ]
+  },
   "photos": {
     "description": "Фото пользователя.",
-    "buttons": ["docs"]
-  },  
-  "patch notes":{
-    "description": "Патчъ ноутъ.",
-    "buttons": ["docs"]
+    "buttons": [
+      "docs"
+    ]
   },
-
+  "patch notes": {
+    "description": "Патчъ ноутъ.",
+    "buttons": [
+      "folder"
+    ]
+  },
   "scan service": {
     "description": "403",
-    "buttons": ["Scan FS","Hack"]
+    "buttons": [
+      "FS",
+      "Hack",
+      "folder"
+    ]
   },
   "FS": {
     "description": "403",
-    "buttons": ["scan service"]
+    "buttons": [
+      "scan service"
+    ]
   },
   "Hack": {
-   "description": "403",
-   "buttons": ["scan service"] 
+    "description": "403",
+    "buttons": [
+      "scan service"
+    ]
   }
-  
 }
