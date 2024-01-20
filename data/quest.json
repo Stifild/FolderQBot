@@ -1,78 +1,52 @@
 {
+  "start": {
+    "description": "Приветъ это квестъ и тебе надо найти выходъ.",
+    "buttons":["Начать"]
+  
   "folder": {
-    "description": " ",
-    "buttons": {
-      "1": "docs",
-      "2": "pet.py",
-      "3": "patch notes",
-      "4": "scan service"
-    }
+    "description": "Папка.",
+    "buttons": ["docs","pet.py","patch notes","scan service"]
   },
   "pet.py": {
-    "description": " ",
-    "buttons": {
-      "1": "Folder"
-    }
+    "description": "Пэтъ проэктъ пользователя.",
+    "buttons": ["Folder"]
   },
-  "doc": {
-    "docs": {
-      "description": " ",
-      "buttons": {
-        "1": "Photos",
-        "2": "secret",
-        "3": "meta",
-        "4": "Notes"
-      }
-    },
-    "secret": {
-      "description": " ",
-      "buttons": {
-        "1": "docs"
-      }
-    },
-    "meta":{
-      "description": " ",
-      "buttons": {
-        "1": "docs"
-      }
-    },
-    "notes": {
-      "description": " ",
-      "buttons": {
-        "1": "docs"
-      }
-    },
-    "photos": {
-      "description": " ",
-      "buttons": {
-        "1": "docs"
-      }
-    }
-    
+  "docs": {
+    "description": "Пользовательские документы.",
+    "buttons": ["Photos","secret","meta","Notes"]
+   },
+ "secret": {
+    "description": "Ведите ключъ]:",
+    "buttons": ["docs"]
   },
+  "meta":{
+    "description": "403",
+    "buttons": ["docs"]
+ },
+  "notes": {
+    "description": "Записки пользователя.",
+    "buttons": ["docs", "еще записка"]
+   },
+  "photos": {
+    "description": "Фото пользователя.",
+    "buttons": ["docs"]
+  },  
   "patch notes":{
-    "description": " ",
-    "buttons": {
-      "1": "docs"
-    }
+    "description": "Патчъ ноутъ.",
+    "buttons": ["docs"]
   },
-  "scan": {
-    "scan service": {
-      "description": " ",
-      "buttons": {
-        "1": "Scan FS",
-        "2": "Hack"
-      }
-    },
-    "FS": {
-      "description": " ",
-      "buttons": {
-        "1": "scan service"
-    },
-    "Hack": {
-      "description": " ",
-      "buttons": {
-        "1": "scan service"
+
+  "scan service": {
+    "description": "403",
+    "buttons": ["Scan FS","Hack"]
+  },
+  "FS": {
+    "description": "403",
+    "buttons": ["scan service"]
+  },
+  "Hack": {
+   "description": "403",
+   "buttons": ["scan service"] 
   }
   
 }
