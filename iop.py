@@ -113,7 +113,7 @@ class Error:
     damage: int
 
     def __init__(self) -> None:
-        self.damage = random.randint(8, 38)
+        self.damage = random.randint(-20, 50)
 
     def get_next_error(self) -> int:
         """

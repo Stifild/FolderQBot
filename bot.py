@@ -1,6 +1,7 @@
 from random import randint
 
 import telebot
+from telebot.types import ReplyKeyboardMarkup
 
 from fs import Notes
 from iop import IOP, Error
@@ -39,14 +40,15 @@ def message_processing(message: telebot.types.Message):
         bot.send_message(chat_id=message.chat.id,
                          text="Oops! There seems to be a error.\n\nsystem integrity ="
                               f" {user_data[str(message.from_user.id)]['hp']}/100")
-
-    if message.text == "Тополь" and user_data[str(message.from_user.id)]["stage"] == '10':
+    if message.text == "Тополь" and user_data[str(message.from_user.id)]["stage"] == 10:
         bot.send_message(chat_id=message.chat.id, text="Поздравляю ты прошел_а этот квест!")
+        user_data.pop(str(message.from_user.id))
+    if user_data[str(message.from_user.id)]["hp"] <= 0:
+        button=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add("/start")
+        bot.send_message(chat_id=message.chat.id, text="Вы проиграли", reply_markup=button)
+        bot.clear_step_handler_by_chat_id(message.chat.id)
     if message.text == "записка" and user_data[str(message.from_user.id)]['stage'] == 12:
         bot.send_message(chat_id=message.chat.id, text=notes.next_note())
-    if user_data[str(message.from_user.id)]["hp"] <= 0:
-        bot.send_message(chat_id=message.chat.id, text="Вы проиграли")
-        user_data.pop(str(message.from_user.id))
     elif message.text in io.its_dict.values():
         user_data[str(message.from_user.id)]["stage"] = io.get_int(message.text)
         txt, buttons = io.get_quest_message(user_data[str(message.from_user.id)]['stage'])
