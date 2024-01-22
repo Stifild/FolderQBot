@@ -44,7 +44,7 @@ def message_processing(message: telebot.types.Message):
 
     if message.text == "Тополь" and user_data[str(message.from_user.id)]["stage"] == '10':
         bot.send_message(chat_id=message.chat.id, text="Поздравляю ты прошел_а этот квест!")
-    if message.text == "записка" and user_data[str(message.from_user.id)]['stage'] == '12':
+    if message.text == "записка" and user_data[str(message.from_user.id)]['stage'] == 12:
         bot.send_message(chat_id=message.chat.id, text=notes.next_note())
     if user_data[str(message.from_user.id)]["hp"] <= 0:
         bot.send_message(chat_id=message.chat.id, text="Вы проиграли")
