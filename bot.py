@@ -3,15 +3,12 @@ from random import randint
 import telebot
 
 from fs import Notes
-from iop import IOP, Quest, Error, Message
+from iop import IOP, Error
 
 clean_markup = telebot.types.ReplyKeyboardRemove()
-user_data = {}
 io = IOP()
-q = Quest()
 notes = Notes()
 er = Error()
-msg = Message()
 user_data = io.user
 
 bot = telebot.TeleBot(token=io.bot_api)
@@ -20,10 +17,10 @@ bot = telebot.TeleBot(token=io.bot_api)
 @bot.message_handler(content_types=['text'])
 def message_processing(message: telebot.types.Message):
     if message.text == "/start":
-        txt, buttons = msg.get_quest_message(1)
+        txt, buttons = io.get_quest_message(1)
 
         bot.send_message(message.chat.id,
-                         q.get_quest_description(1),
+                         io.get_quest_description(1),
                          reply_markup=buttons)
 
         user_data[str(message.from_user.id)] = {
@@ -40,7 +37,8 @@ def message_processing(message: telebot.types.Message):
         user_data[str(message.from_user.id)]["next_error"] = er.get_next_error()
         user_data[str(message.from_user.id)]["count_of_steps"] = 0
         bot.send_message(chat_id=message.chat.id,
-                         text=f"Oops! There seems to be a error.\n\nsystem integrity = {user_data[str(message.from_user.id)]['hp']}/100")
+                         text="Oops! There seems to be a error.\n\nsystem integrity ="
+                              f" {user_data[str(message.from_user.id)]['hp']}/100")
 
     if message.text == "Тополь" and user_data[str(message.from_user.id)]["stage"] == '10':
         bot.send_message(chat_id=message.chat.id, text="Поздравляю ты прошел_а этот квест!")
@@ -51,7 +49,7 @@ def message_processing(message: telebot.types.Message):
         user_data.pop(str(message.from_user.id))
     elif message.text in io.its_dict.values():
         user_data[str(message.from_user.id)]["stage"] = io.get_int(message.text)
-        txt, buttons = msg.get_quest_message(user_data[str(message.from_user.id)]['stage'])
+        txt, buttons = io.get_quest_message(user_data[str(message.from_user.id)]['stage'])
         with open(f'media/for msg/{randint(1, 20)}.png', 'rb') as f:
             bot.send_photo(chat_id=message.chat.id, photo=f, caption=txt, reply_markup=buttons)
     user_data[str(message.from_user.id)]["count_of_steps"] += 1

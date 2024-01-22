@@ -1,4 +1,4 @@
-from iop import Quest
+from iop import IOP
 
 
 class Photos:
@@ -9,7 +9,7 @@ class Notes:
     progress = 0
 
     def __init__(self):
-        self.quest = Quest()
+        self.quest = IOP()
 
     def next_note(self):
         self.progress += 1
