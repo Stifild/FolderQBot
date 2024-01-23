@@ -46,7 +46,6 @@ def message_processing(message: telebot.types.Message):
     if user_data[str(message.from_user.id)]["hp"] <= 0:
         button=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add("/start")
         bot.send_message(chat_id=message.chat.id, text="Вы проиграли", reply_markup=button)
-        bot.clear_step_handler_by_chat_id(message.chat.id)
     if message.text == "записка" and user_data[str(message.from_user.id)]['stage'] == 12:
         bot.send_message(chat_id=message.chat.id, text=notes.next_note())
     elif message.text in io.its_dict.values():
