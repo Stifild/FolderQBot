@@ -41,10 +41,11 @@ def message_processing(message: telebot.types.Message):
                          text="Oops! There seems to be a error.\n\nsystem integrity ="
                               f" {user_data[str(message.from_user.id)]['hp']}/100")
     if message.text == "Тополь" and user_data[str(message.from_user.id)]["stage"] == 10:
-        bot.send_message(chat_id=message.chat.id, text="Поздравляю ты прошел_а этот квест!")
-        user_data.pop(str(message.from_user.id))
+        button = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add("/start")
+        bot.send_message(chat_id=message.chat.id, text="Поздравляю ты прошел_а этот квест!", reply_markup=button)
+        user_data[str(message.from_user.id)]["next_error"] = -1
     if user_data[str(message.from_user.id)]["hp"] <= 0:
-        button=ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add("/start")
+        button = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add("/start")
         bot.send_message(chat_id=message.chat.id, text="Вы проиграли", reply_markup=button)
     if message.text == "записка" and user_data[str(message.from_user.id)]['stage'] == 12:
         bot.send_message(chat_id=message.chat.id, text=notes.next_note())
