@@ -3,12 +3,10 @@ from random import randint
 import telebot
 from telebot.types import ReplyKeyboardMarkup
 
-from fs import Notes
 from iop import IOP, Error
 
 clean_markup = telebot.types.ReplyKeyboardRemove()
 io = IOP()
-notes = Notes()
 er = Error()
 user_data = io.user
 
@@ -48,7 +46,10 @@ def message_processing(message: telebot.types.Message):
         button = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add("/start")
         bot.send_message(chat_id=message.chat.id, text="Вы проиграли", reply_markup=button)
     if message.text == "записка" and user_data[str(message.from_user.id)]['stage'] == 12:
-        bot.send_message(chat_id=message.chat.id, text=notes.next_note())
+        bot.send_message(chat_id=message.chat.id, text=io.next_note())
+    if message.text == "фото" and user_data[str(message.from_user.id)]['stage'] == 13:
+        with open(io.next_photo(), "rb") as f:
+            bot.send_photo(chat_id=message.chat.id, photo=f)
     elif message.text in io.its_dict.values():
         user_data[str(message.from_user.id)]["stage"] = io.get_int(message.text)
         txt, buttons = io.get_quest_message(user_data[str(message.from_user.id)]['stage'])

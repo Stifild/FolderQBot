@@ -16,6 +16,8 @@ class IOP:
     user: dict
     bot_api = str(getenv('BOT_TOKEN'))
     text: dict
+    note_progress = 0
+    photo_progress = 0
 
     def get_json(self, path: str) -> dict:
         """Функция, которая загружает данные из файла и возвращает словарь.
@@ -104,6 +106,26 @@ class IOP:
         for i in self.get_quest_buttons(stage):
             buttons.add(i)
         return message, buttons
+
+    def next_photo(self):
+        """
+        Функция получения пути для фото
+        :return: Путь
+        """
+        self.note_progress += 1
+        if self.note_progress >= 0:
+            self.note_progress = 0
+        return self.get_file(13)[self.note_progress]
+
+    def next_note(self) -> str:
+        """
+        Функция получения записки
+        :return: Записка
+        """
+        self.note_progress += 1
+        if self.note_progress >= 10:
+            self.note_progress = 0
+        return self.get_file(12)[self.note_progress]
 
 
 class Error:
