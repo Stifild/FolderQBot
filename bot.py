@@ -38,7 +38,7 @@ def message_processing(message: telebot.types.Message):
         bot.send_message(chat_id=message.chat.id,
                          text="Oops! There seems to be a error.\n\nsystem integrity ="
                               f" {user_data[str(message.from_user.id)]['hp']}/100")
-    if message.text == "Тополь" and user_data[str(message.from_user.id)]["stage"] == 10:
+    if message.text.lower() == "тополь" and user_data[str(message.from_user.id)]["stage"] == 10:
         button = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add("/start")
         bot.send_message(chat_id=message.chat.id, text="Поздравляю ты прошел_а этот квест!", reply_markup=button)
         user_data[str(message.from_user.id)]["next_error"] = -1

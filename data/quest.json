@@ -1,6 +1,6 @@
 {
   "start": {
-    "description": "Приветъ это квестъ и тебе надо найти выходъ.",
+    "description": "Нажми folder чтобы начать.",
     "buttons": [
       "folder"
     ]
@@ -15,7 +15,7 @@
     ]
   },
   "pet.py": {
-    "description": "Пэтъ проэктъ пользователя.",
+    "description": "Пэт проэкт пользователя.",
     "buttons": [
       "folder"
     ]
@@ -31,7 +31,7 @@
     ]
   },
   "secret": {
-    "description": "Ведите ключъ:",
+    "description": "Ведите ключ:",
     "buttons": [
       "docs"
     ]
@@ -43,7 +43,7 @@
     ]
   },
   "notes": {
-    "description": "Записки пользователя. 10 штукъ.",
+    "description": "Записки пользователя. 10 штук.",
     "buttons": [
       "docs",
       "записка"
@@ -57,7 +57,7 @@
     ]
   },
   "patch notes": {
-    "description": "Патчъ ноутъ.",
+    "description": "Патч ноуты.",
     "buttons": [
       "folder"
     ]
