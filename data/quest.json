@@ -9,9 +9,7 @@
     "description": "Папка.",
     "buttons": [
       "docs",
-      "pet.py",
-      "patch notes",
-      "scan service"
+      "pet.py"
     ]
   },
   "pet.py": {
@@ -54,32 +52,6 @@
     "buttons": [
       "docs",
       "фото"
-    ]
-  },
-  "patch notes": {
-    "description": "Патч ноуты.",
-    "buttons": [
-      "folder"
-    ]
-  },
-  "scan service": {
-    "description": "403",
-    "buttons": [
-      "FS",
-      "Hack",
-      "folder"
-    ]
-  },
-  "FS": {
-    "description": "403",
-    "buttons": [
-      "scan service"
-    ]
-  },
-  "Hack": {
-    "description": "403",
-    "buttons": [
-      "scan service"
     ]
   }
 }
